@@ -1,7 +1,14 @@
 import java.util.*;
 
-public class TwoMultiply {
-    public static int[] twoMultiply(int[] nums, int target) {
+class TwoMultiply {
+
+    public static void main(String[] args) {
+
+        HashSet result = twoMultiply(new int[] { 1, 2, 4, 5 }, 8);
+        System.out.println(result);
+    }
+
+    public static HashSet twoMultiply(int[] nums, int target) {
         Set set = new HashSet();
         for (int i = 0; i < nums[i]; i++) {
             int complement = target / nums[i];
@@ -11,6 +18,6 @@ public class TwoMultiply {
             }
             set.add(nums[i]);
         }
-        return new int[] {};
+        return set;
     }
 }
