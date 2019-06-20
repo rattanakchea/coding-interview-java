@@ -13,42 +13,30 @@ class NumOfIsland {
         boolean[][] visited = new boolean[numsOfRow][numsOfCol];
 
         int count = 0;
-        int total = 0;
         for (int row = 0; row < numsOfRow; row++) {
             for (int col = 0; col < numsOfCol; col++) {
-                count = dfs(grid, row, col, visited);
-                // System.out.println(count);
-                if (count > 0) {
-                    total++;
+                if (grid[row][col] == 1 && visited[row][col] == false) {
+                    count++;
+                    dfs(grid, row, col, visited);
                 }
             }
         }
-
-        return total;
-
+        return count;
     }
 
-    public static int dfs(int[][] grid, int row, int col, boolean[][] visited) {
+    // mark island as visited
+    public static void dfs(int[][] grid, int row, int col, boolean[][] visited) {
         // out of bounce
         if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length) {
-            return 0;
+            return;
         }
 
         if (visited[row][col] == true || grid[row][col] == 0)
-            return 0;
+            return;
         visited[row][col] = true;
-
-        // return 1
-        // + dfs(grid, row, col+1, visited)
-        // + dfs(grid, row, col-1, visited)
-        // + dfs(grid, row+1, col, visited)
-        // + dfs(grid, row-1, col, visited);
-
         dfs(grid, row, col + 1, visited);
         dfs(grid, row, col - 1, visited);
         dfs(grid, row + 1, col, visited);
         dfs(grid, row - 1, col, visited);
-        return 1;
-
     }
 }
