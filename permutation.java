@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Permutation {
+class Permutation {
     public static void main(String[] args) {
 
         ArrayList<String> r = stringPermutation("abc");
