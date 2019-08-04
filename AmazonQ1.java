@@ -1,17 +1,14 @@
 import java.util.List;
 import java.util.*;
+
 // CLASS BEGINS, THIS CLASS IS REQUIRED
-public class Solution
-{
+public class AmazonQ1 {
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
-    List<List<Integer>> closestLocations(int totalCrates, 
-                                         List<List<Integer>> allLocations, 
-                                         int truckCapacity)
-{
+    List<List<Integer>> closestLocations(int totalCrates, List<List<Integer>> allLocations, int truckCapacity) {
         // for ( List<Integer> list : allLocations) {
-        //     System.out.println(findDistance(list.get(0), list.get(1)));
+        // System.out.println(findDistance(list.get(0), list.get(1)));
         // }
-        
+
         // sort allLocation by distance
         Collections.sort(allLocations, new Comparator<List<Integer>>() {
             @Override
@@ -19,16 +16,16 @@ public class Solution
                 return Double.compare(findDistance(a), findDistance(b));
             }
         });
-        
+
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        for (int i=0; i < truckCapacity; i++) {
+        for (int i = 0; i < truckCapacity; i++) {
             result.add(allLocations.get(i));
         }
         return result;
     }
-    
+
     double findDistance(List<Integer> list) {
-        return Math.sqrt(list.get(0)*list.get(0) + list.get(1)*list.get(1));
+        return Math.sqrt(list.get(0) * list.get(0) + list.get(1) * list.get(1));
     }
     // METHOD SIGNATURE ENDS
 }
