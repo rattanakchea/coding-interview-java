@@ -3,6 +3,11 @@ import java.util.*;
 
 // CLASS BEGINS, THIS CLASS IS REQUIRED
 public class AmazonQ1 {
+
+    public static void main(String str[]) {
+        System.out.println("hello");
+    }
+
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
     List<List<Integer>> closestLocations(int totalCrates, List<List<Integer>> allLocations, int truckCapacity) {
         // for ( List<Integer> list : allLocations) {
